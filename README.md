@@ -1,9 +1,10 @@
-# Learned Sectors
+# Learned Sectors Analytics
 
-*get_data.py* is used to extract features from .xlcx raw data to create a training set.
+The functionality of each of the files is divided as follows:
 
-*universe.py* is used to remove companies with missing data in the training set.
-
-*model.py* is used to build a hierarchical clustering and visiualize results.
-
-*pd.py* is used to calculate default probability correlations among sectors.
+|Filename|Description|
+|:------:|:---------:|
+|`get_data.py`|Used to extract features from `raw_data.xslx` to create a training set|
+|`universe.py`|Used to remove companies with missing data in the training set|
+|`model.py`|Used to build a hierarchical clustering and visiualize results|
+|`pd.py`|Used to calculate default probability correlations among sectors|
