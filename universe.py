@@ -1,14 +1,14 @@
 import pandas as pd
 import numpy as np
 #%%
-df = pd.read_csv('spy500.csv')
+df = pd.read_csv('fundamentals_data/spy500.csv')
 #%%
 df.sort_values('Sector', inplace=True)
 #%%
 df['Sector'].unique()
 #%%
 df['Symbol'].to_csv(
-        'download_list.txt',
+        'fundamentals_data/download_list.txt',
         sep='\n',
         header=False,
         index=False
@@ -37,7 +37,7 @@ years = np.arange(2010, 2019)
 for year in years:
     df = select_universe(year)
 #%%
-df['Symbol'].to_csv('universe.csv', index=False)
+df['Symbol'].to_csv('fundamentals_data/universe.csv', index=False)
 
 
 

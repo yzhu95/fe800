@@ -2,13 +2,13 @@ import pandas as pd
 import numpy as np
 #from scipy import stats
 #%%
-df = pd.read_csv('pd.csv', index_col=0)
+df = pd.read_csv('fundamentals_data/pd.csv', index_col=0)
 df.dropna(axis=1, inplace=True)
 columns = [x.split(' ')[0] for x in list(df.columns)]
 df.columns = columns
 
 #%% Traditonal Sectors
-spx = pd.read_csv('spy500.csv')
+spx = pd.read_csv('fundamentals_data/spy500.csv')
 spx = spx[spx['Symbol'].isin(df.columns)]
 #%%
 sectors = spx['Sector'].unique()
@@ -34,7 +34,7 @@ res = res.transpose()
 res2= res.round(2).sort_values('mean', ascending=0)
 
 #%% New Sectors
-new = pd.read_csv('new_sectors.csv', index_col=0)
+new = pd.read_csv('fundamentals_data/new_sectors.csv', index_col=0)
 new = new[new['Symbol'].isin(df.columns)]
 #%%
 sectors = new['group'].unique()

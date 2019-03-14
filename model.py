@@ -6,7 +6,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
 #%%
-df = pd.read_csv('data.csv', index_col=0)
+df = pd.read_csv('fundamentals_data/data.csv', index_col=0)
 #%%
 def ratio(Series):
     return Series / Series[0]
@@ -47,9 +47,9 @@ res = pd.DataFrame({
         'group': res
     })
 #%%
-res.to_csv('new_sectors.csv')
+res.to_csv('fundamentals_data/new_sectors.csv')
 #%%
-spy = pd.read_csv('spy500.csv')[['Symbol', 'Sector']]
+spy = pd.read_csv('fundamentals_data/spy500.csv')[['Symbol', 'Sector']]
 #%%
 res = res.merge(spy, on='Symbol')
 #%%

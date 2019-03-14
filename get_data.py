@@ -1,6 +1,10 @@
+#%% [markdown]
+# This is a test.
+# Testing 123.
+
 import pandas as pd
 
-df = pd.read_excel('raw_data.xlsx')
+df = pd.read_excel('fundamentals_data/raw_data.xlsx')
 
 def get_data(year, features):
     data = df[df.iloc[:, 1] == features[0]].iloc[:, [0, year-2006]]
@@ -25,7 +29,7 @@ features = [
 
 data = get_data(year, features)
 #%%
-universe = pd.read_csv('universe.csv', header=None)[0]
+universe = pd.read_csv('fundamentals_data/universe.csv', header=None)[0]
 data = data.loc[universe]
 #%%
-data.to_csv('data.csv')
+data.to_csv('fundamentals_data/data.csv')
